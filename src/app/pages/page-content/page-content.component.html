@@ -1,0 +1,28 @@
+<section class="Section-1"> 
+  <div class="container">
+    <div class="row bg-light mt-5">
+      <div class="col-6">
+        <h1 class="mt-5 text-center">Buscar Anime:</h1>
+        <form class="mb-3" [formGroup]="form">
+            <mat-form-field style="width: 100%;">
+              <input
+                [formControl]="searchControl"
+                matInput
+                placeholder="Buscar"
+              />
+            </mat-form-field>
+          </form>
+          <div class="row">
+            <div class="col-4" *ngFor="let anime of animes">
+              <app-item [anime]="anime"></app-item>
+            </div>
+          </div>
+      </div>
+      
+      <div class="col-6">
+        <h2 class="mt-5">Example Async</h2>
+        <app-async></app-async>
+      </div>
+    </div>
+  </div>
+</section>
